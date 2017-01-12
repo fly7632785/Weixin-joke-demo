@@ -1,5 +1,6 @@
 var showapi_appid = "30040"
 var showapi_sign = "83d55e2b18c444a2b2da3034bf7e23bd"
+
 var that;
 
 var page =
@@ -62,7 +63,11 @@ var page =
 
   }
 
-
+/**
+ *page之外的函数
+ page 的data 就是前面的data
+ page就是Page的对象
+ */
 var getJokeData = function () {
   console.log("page:" + page.data.pageIndex);
   wx.request({
@@ -80,12 +85,14 @@ var getJokeData = function () {
       wx.hideToast();
       console.log(that.data.list);
       console.log(res.data.showapi_res_body.contentlist);
-      var list = that.data.list;
+      //这里可以填page.data.list 也可以that.data.list
+      //因为that就指向page
+      var list = page.data.list;
       for (var i = 0; i < res.data.showapi_res_body.contentlist.length; i++) {
         list.push(res.data.showapi_res_body.contentlist[i]);
       }
       console.log(list);
-
+      //但是这里的that不能换成page 至于page和that的关系
       that.setData({
         list: list,
         isRefresh: false,

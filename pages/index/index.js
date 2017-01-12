@@ -3,7 +3,7 @@
 var app = getApp()
 Page({
   data: {
-    motto: 'Hello World',
+    motto: 'https://github.com/fly7632785/Weixin-joke-demo',
     userInfo: {}
   },
   //事件处理函数

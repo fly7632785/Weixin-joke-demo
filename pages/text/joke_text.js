@@ -78,12 +78,26 @@ var getJokeData = function () {
 
       // success
       wx.hideToast();
+
+
       console.log(that.data.list);
       console.log(res.data.showapi_res_body.contentlist);
       var list = that.data.list;
       for (var i = 0; i < res.data.showapi_res_body.contentlist.length; i++) {
-var item = res.data.showapi_res_body.contentlist[i];
-        list.push(item);
+        //先从json对象转为stirng 然后过滤
+        //然后还要转化为json对象
+        var  item = JSON.stringify(res.data.showapi_res_body.contentlist[i]);
+        console.log("item"+item);
+        //由于接口返回数据有点问题
+        //这里高能 采用的过滤调用4种字符串 
+        // <p> </p> <p class="MsoNormal">  &nbsp;
+        // 注意/要加转义\  "也要用\
+        //这里 <p class="MsoNormal"> 有点特别 看log就知道了了
+        //它原本是这样的 <p class=\"MsoNormal\"> 所以加上一个转义就变成了<p class=\\"MsoNormal\\">
+        var a = item.replace(
+          new RegExp(/(<p>)|(<\/p>)|(<p class=\\"MsoNormal\\">)|(&nbsp;)/g),'');
+        console.log("a"+a);
+        list.push(JSON.parse(a));
       }
       console.log(list);
 

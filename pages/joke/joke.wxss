@@ -15,7 +15,7 @@
 
 .scrollview{
   background-color: #f3f3f3;
-  backface-visibility: visible
+  /*backface-visibility: visible*/
 }
 
 .joke-item {
