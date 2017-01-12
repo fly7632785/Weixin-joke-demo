@@ -82,7 +82,8 @@ var getJokeData = function () {
       console.log(res.data.showapi_res_body.contentlist);
       var list = that.data.list;
       for (var i = 0; i < res.data.showapi_res_body.contentlist.length; i++) {
-        list.push(res.data.showapi_res_body.contentlist[i]);
+var item = res.data.showapi_res_body.contentlist[i];
+        list.push(item);
       }
       console.log(list);
 

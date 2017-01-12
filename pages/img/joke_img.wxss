@@ -6,6 +6,9 @@
   z-index: 5;
 }
 
+.scrollview{
+  background-color: #f3f3f3;
+}
 .page_header_text {
   padding: 20rpx 40rpx;
   color: #999;
@@ -15,7 +18,7 @@
 
 
 .joke-item {
-  margin-bottom: 40rpx;
+  margin-top: 40rpx;
   z-index: 15;
   margin-left: 30rpx;
   margin-right: 30rpx;

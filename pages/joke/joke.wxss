@@ -13,9 +13,13 @@
   text-align: center;
 }
 
+.scrollview{
+  background-color: #f3f3f3;
+  backface-visibility: visible
+}
 
 .joke-item {
-  margin-bottom: 40rpx;
+  margin-top: 40rpx;
   z-index: 15;
   margin-left: 30rpx;
   margin-right: 30rpx;
