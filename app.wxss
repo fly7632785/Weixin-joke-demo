@@ -8,4 +8,7 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
-
+/*全局设置背景*/
+/*page{
+  background: #b3d4db;
+}*/

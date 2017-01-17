@@ -93,6 +93,14 @@ var getJokeData = function () {
       }
       console.log(list);
       //但是这里的that不能换成page 至于page和that的关系
+      //因为现在的这个page对象 确实不= that ,that才是真正page对象的上下文对象，也就是page对象本身。 而，我的page只是作为一个形参传入，并没有初始化  所以page！=that
+
+      /**
+       *注意不能直接赋值 因为setData应该不只是简单的赋值
+       还是包括react的操作
+       */
+      // that.data.list = list;
+      // console.log(that.data.list[0]);
       that.setData({
         list: list,
         isRefresh: false,

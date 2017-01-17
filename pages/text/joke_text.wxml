@@ -4,9 +4,10 @@
 <scroll-view scroll-y="true" class="scrollview" bindscrolltoupper="refresh" style="height:{{scrollHeight}}px;" bindscrolltolower="loadmore" bindscroll="scroll">
   <view class="joke-item" wx:for="{{list}}">
     <text class="item-title">{{item.title}}</text>
+    <!--<view>{{item.title}}</view>-->
     <text class="item-text">{{item.text}}</text>
   </view>
 </scroll-view>
 <view class="page_header">
   <text wx:if="{{isRefresh}}" class="page_header_text">正在加载...</text>
-</view>
+</view> 
